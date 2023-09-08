@@ -3,7 +3,7 @@
 #include <time.h>
 
 /**
-* main - Entry point of the program
+* main - Entry point
 *
 * Description: This program generates a random integer,
 *              assigns it to the variable 'n', and then prints
@@ -18,22 +18,20 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	while (n != 0)
-	{
+	printf("Generated random number: %d\n", n);
+
 	if (n > 0)
 	{
 	printf("%d is positive\n", n);
 	}
-	else
+	else if (n < 0)
 	{
 	printf("%d is negative\n", n);
 	}
-
-	n = rand() - RAND_MAX / 2;
-	}
-
+	else
+	{
 	printf("%d is zero\n", n);
+	}
 
 	return (0);
 }
-
