@@ -4,7 +4,7 @@
 /**
 * main - This is the main Function of the program
 *
-* Descripition - This code print alphabetic letters in reverse
+* Descripition - This code print alphabetic letters in reverse order
 *
 * return: Always 0 (SUCCESS)
 **/
