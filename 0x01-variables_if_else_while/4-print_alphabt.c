@@ -22,8 +22,8 @@ int main(void)
 	{
 	putchar(letter);
 
-	}
 	letter++;
+	}
 	}
 
 	while (letter <= 'z');
