@@ -13,29 +13,30 @@
 int main(void)
 
 {
-	int number = 0;
+	int number;
+	int number0;
 
-	while (number <= 99)
+	for (number = 0; number <= 9; number++)
+
+	{
+	for (number0 = 0; number0 <= 99; number0++)
+
+	putchar('0' + number);
+	putchar('0' + number0);
 	{
 
-	if (number < 10)
+	if (number == 9 && number0 == 9)
 	{
-	putchar('0' + number / 10);
-	putchar('0' + number % 10);
-	putchar(' ');
+	putchar('\n');
 	}
 
 	else
 	{
-	putchar('0' + number / 10);
-	putchar('0' + number % 10);
+	putchar(',');
 	putchar(' ');
 	}
-
-	number++;
-
 	}
-	putchar('\n');
+	}
 
 	return (0);
 }
