@@ -3,6 +3,7 @@
 /**
  * print_line - Print a line of underscores
  * @n: The number of underscores to print
+ * Return: Always 0 (SUCCESS)
  **/
 
 void print_line(int n)
@@ -20,7 +21,6 @@ void print_line(int n)
 		{
 		_putchar('_');
 		}
-		_putchar('\n');
 	}
 	_putchar('\n');
 }
