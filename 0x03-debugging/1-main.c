@@ -13,6 +13,8 @@ int main(void)
 
 	i = 0;
 
+	/* This condition will always be true */
+
 	while (i < 10) /* This condition wil always be true */
 	{
 		putchar(i); /* This is will cause infinite loop */
