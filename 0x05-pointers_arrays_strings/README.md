@@ -32,6 +32,9 @@ By the end of this project, you should be able to explain the following concepts
 
 
 # Code Explanation: Reset to 98
+## Code Link
+
+[0-reset_to_98.c](./0-reset_to_98.c)
 
 ## Overview
 
