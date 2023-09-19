@@ -103,6 +103,29 @@ You can use the `_strlen` function to determine the length of a string by passin
 
 The `_strlen` function is a simple and useful utility for finding the length of a string in a C program.
 
+# Code Explanation: Print String
+
+[3-puts.c](./3-puts.c)
+## Overview
+
+The C code defines a function called `_puts` that prints a string to the standard output, followed by a newline character.
+
+## Code Description
+
+- `void _puts(char *str)`: This function takes a pointer to a character as input (representing the string to print).
+
+- Inside the function, it iterates through the characters in the string using a `while` loop and prints each character using `_putchar`.
+
+- After printing the entire string, a newline character `'\n'` is added to start a new line.
+
+## Usage
+
+The `_puts` function is useful for displaying strings on the console by passing a pointer to the string as an argument.
+
+## Conclusion
+
+In C programming, `_puts` simplifies the process of printing strings to the standard output, making it easy to display text.
+
 ## Author
 
 Written by [Fromb23].
