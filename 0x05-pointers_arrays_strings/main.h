@@ -23,5 +23,5 @@ char *_strcpy(char *dest, char *src);
 
 int _atoi(char *s);
 
-
+void puts_half(char *str);
 #endif
