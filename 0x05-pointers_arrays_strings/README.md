@@ -78,6 +78,31 @@ This C program demonstrates swapping two integer variables (`a` and `b`) using a
 - Compile with a C compiler (GCC).
 - Run the resulting binary to observe value swaps.
 
+# Code Explanation: String Length
+
+[2-strlen.c](./2-strlen.c)
+## Overview
+
+The C code defines a function named `_strlen` that calculates the length of a string. It takes a pointer to a character (`char *s`) as input and returns the length of the string.
+
+## Code Description
+
+- `int _strlen(char *s)`: This function accepts a pointer to a character as its parameter.
+
+- Inside the function, it initializes a variable `length` to 0 to keep track of the string's length.
+
+- Using a `while` loop, the code iterates through the characters in the string pointed to by `s` until it encounters the null terminator `'\0'`. During each iteration, it increments the `length` variable and advances the pointer `s` to the next character.
+
+- Once the loop finishes, the function returns the calculated `length`, which represents the length of the input string.
+
+## Usage
+
+You can use the `_strlen` function to determine the length of a string by passing a pointer to the string as its argument.
+
+## Conclusion
+
+The `_strlen` function is a simple and useful utility for finding the length of a string in a C program.
+
 ## Author
 
 Written by [Fromb23].
