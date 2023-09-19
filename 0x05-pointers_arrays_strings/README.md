@@ -126,6 +126,32 @@ The `_puts` function is useful for displaying strings on the console by passing 
 
 In C programming, `_puts` simplifies the process of printing strings to the standard output, making it easy to display text.
 
+
+# Code Explanation: Reverse String Print
+
+## Overview
+
+[4-prin_rev.c](./4-print_rev.c)
+This C code defines a function called `print_rev` that prints a string in reverse order to the standard output. It takes a pointer to a character (`char *s`) as input and displays the characters in reverse order, followed by a newline character.
+
+## Code Description
+
+- `void print_rev(char *s)`: This function accepts a pointer to a character as input, representing the string to be reversed and printed.
+
+- Inside the function, it calculates the length of the input string and initializes a variable for reverse iteration.
+
+- Using a `for` loop, the code iterates through the characters in reverse order, printing each character using `_putchar`.
+
+- After printing all characters in reverse, a newline character is added to start a new line.
+
+## Usage
+
+You can use the `print_rev` function to display a string in reverse order on the console by passing a pointer to the string as its argument.
+
+## Conclusion
+
+The `print_rev` function is a helpful tool for easily printing strings in reverse order in C, enabling you to reverse and display text efficiently.
+
 ## Author
 
 Written by [Fromb23].
