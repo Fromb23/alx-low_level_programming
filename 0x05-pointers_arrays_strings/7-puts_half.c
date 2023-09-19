@@ -13,7 +13,14 @@ void puts_half(char *str)
 	int start_index;
 	int i;
 
-	start_index = (length % 2 == 0) ? length / 2 : (length - 1) / 2;
+	if (length % 2 == 0)
+	{
+	start_index = length / 2;
+	}
+	else
+	{
+	start_index = (length - 1) / 2;
+	}
 
 	for (i = start_index; i < length; i++)
 	{
