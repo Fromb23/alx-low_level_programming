@@ -129,9 +129,11 @@ In C programming, `_puts` simplifies the process of printing strings to the stan
 
 # Code Explanation: Reverse String Print
 
+[4-print_rev.c](./4-print_rev.c)
+
 ## Overview
 
-[4-prin_rev.c](./4-print_rev.c)
+
 This C code defines a function called `print_rev` that prints a string in reverse order to the standard output. It takes a pointer to a character (`char *s`) as input and displays the characters in reverse order, followed by a newline character.
 
 ## Code Description
