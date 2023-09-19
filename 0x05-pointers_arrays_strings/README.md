@@ -35,15 +35,21 @@ By the end of this project, you should be able to explain the following concepts
 
 ## Overview
 
-The provided C code defines a function called `reset_to_98` that takes a pointer to an integer (`int *n`) as its parameter. The purpose of this function is to modify the value stored in the memory location pointed to by the pointer `n` and set it to the value 98.
+This C code defines a function called `reset_to_98` with the purpose of modifying the value of an integer variable. It takes a pointer to an integer (`int *n`) as its parameter and sets the value in the memory location pointed to by `n` to 98.
 
 ## Code Description
 
-```c
-void reset_to_98(int *n)
-{
-    *n = 98;
-}
+- `void reset_to_98(int *n)`: This function is defined with a single parameter, which is a pointer to an integer (`int *n`).
+
+- The function's main task is to change the value stored in the memory location pointed to by the parameter `n` and set it to 98.
+
+## Usage
+
+You can use this function to reset the value of an integer variable to 98 by passing a pointer to that variable as an argument to the `reset_to_98` function.
+
+## Conclusion
+
+The `reset_to_98` function provides a straightforward way to change the value of an integer variable by passing a pointer to it. It is a useful tool for modifying integer values within a C program.
 
 
 # Swap Integers in C
