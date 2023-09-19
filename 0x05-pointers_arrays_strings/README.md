@@ -30,11 +30,27 @@ By the end of this project, you should be able to explain the following concepts
 - **Testing Files:** You can use the provided main.c files for testing, but you are not required to push them.
 - **Compilation:** Compilation will use the provided main.c files, which may differ from the examples shown.
 
+
+# Code Explanation: Reset to 98
+
+## Overview
+
+The provided C code defines a function called `reset_to_98` that takes a pointer to an integer (`int *n`) as its parameter. The purpose of this function is to modify the value stored in the memory location pointed to by the pointer `n` and set it to the value 98.
+
+## Code Description
+
+```c
+void reset_to_98(int *n)
+{
+    *n = 98;
+}
+
+
 # Swap Integers in C
 
 ## Code Link
 
-[Code File](./1-swap.c)
+[1-swap.c](./1-swap.c)
 
 ## Overview
 
@@ -50,7 +66,7 @@ This C program demonstrates swapping two integer variables (`a` and `b`) using a
 
 ## Execution
 
-- Compile with a C compiler (e.g., GCC).
+- Compile with a C compiler (GCC).
 - Run the resulting binary to observe value swaps.
 
 ## Author
