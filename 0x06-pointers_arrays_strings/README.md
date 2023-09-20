@@ -46,6 +46,8 @@ This project aims to deepen your understanding of pointers, arrays, strings, and
 # Function Summary: `_strcat`
 
 [0-strcat.c](./strcat.c)
+
+
 The `_strcat` function concatenates two strings, `dest` and `src`, and returns a pointer to the resulting concatenated string. 
 
 ## Parameters
