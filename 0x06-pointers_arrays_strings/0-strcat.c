@@ -14,16 +14,15 @@
 char *_strcat(char *dest, char *src)
 
 {
-	int total_length = strlen(dest) + strlen(src) + 1;
+	int i;
+	int length1 = strlen(dest);
+	int length2 = strlen(src);
 
-	char *concatenated = (char *)malloc(total_length * sizeof(char));
-
-	if (concatenated != NULL)
+	for (i = 0; i <= length2; i++)
 	{
-	strcpy(concatenated, dest);
-
-	strcat(concatenated, src);
+		dest[length1 + i] = src[i];
 	}
+	dest[length1 + length2] = '\0';
+	return (dest);
 
-	return (concatenated);
 }
