@@ -1,16 +1,22 @@
 #include "main.h"
+#include <stdlib.h>
+
+/**
+ * print_last_digit - Print the last digit of an integer.
+ * @i: The integer input.
+ *
+ * Return: The last digit.
+ **/
 
 int print_last_digit(int i)
 
 {
 	int last = i % 10;
 
-	if (last >= 0)
+	if (last < 0)
 	{
-		return _putchar('0' + last);
+		last = -last;
 	}
-	else
-	{
-	return _putchar('0' + last);
-	}
+	 _putchar('0' + last);
+		return (last);
 }
