@@ -22,30 +22,30 @@ int main(int argc, char *argv[])
 	{
 		printf("%d\n", zero);
 	}
-	else
-	{
-	for (j = 1; j < argc; j++)
-	{
-		add = atoi(argv[j]);
-
-	if (add == 0 && argv[j][0] != '0')
-	{
-		printf("%s\n", error);
-		return (1);
-	}
-	else
-	{
-		if (argc < 2)
-		{
-			printf("%s\n", error);
-			return (1);
-		}
 		else
-		{
-			summation += add;
-		}
-	}
-	}
+			{
+			for (j = 1; j < argc; j++)
+			{
+				add = atoi(argv[j]);
+
+					if (add < 0 || (add == 0 && argv[j][0] != '0'))
+					{
+					printf("%s\n", error);
+					return (1);
+					}
+					else
+					{
+					if (argc < 2)
+						{
+						printf("%s\n", error);
+						return (1);
+						}
+					else
+					{
+					summation += add;
+					}
+				}
+			}
 
 	printf("%d\n", summation);
 	}
