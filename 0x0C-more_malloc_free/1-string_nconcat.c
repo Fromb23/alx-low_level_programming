@@ -32,11 +32,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n > (unsigned int) len2)
 	{
-		total_length = len1 +  n + 1;
+		total_length = len1 + len2 + 1;
 	}
 	else
 	{
-		total_length = len1 + len2 + 1;
+		total_length = len1 + n + 1;
 	}
 
 	concatenated = (char *)malloc(total_length * sizeof(char));
