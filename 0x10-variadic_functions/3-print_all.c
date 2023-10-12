@@ -53,7 +53,7 @@ char *arg_string = va_arg(everything, char *);
 	{
 		printf("(nil)");
 	}
-	else
+	if (arg_string != NULL)	
 	{
 		printf("%s", arg_string);
 	}
