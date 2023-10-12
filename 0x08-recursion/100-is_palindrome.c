@@ -10,17 +10,27 @@
 
 int is_palindrome(char *s)
 
-{
-	int length = strlen(s);
-	int middle = length / 2;
-	int i;
+int is-palindrome(char *s, int initial, int end)
 
-	for (i = 0; i < middle; i++)
+{
+	if (initial >= end)
 	{
-		if (s[i] != s[length - i - 1])
-		{
-			return (0);
-		}
+		return (1);
 	}
-	return (1);
+	if (s[initial] != s[end])
+	{
+		return (0);
+	}
+
+int is_palindrome(char *s)
+
+{
+	if (s[initial] == s[end])
+	{
+		return (1);
+	}
+	else
+	{
+		return (is-palindrome(char *s, initial + 1, end -1)
+	}
 }

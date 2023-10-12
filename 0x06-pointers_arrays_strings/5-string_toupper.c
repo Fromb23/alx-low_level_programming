@@ -24,4 +24,3 @@ char *string_toupper(char *upper)
 
 	return (upper);
 }
-
