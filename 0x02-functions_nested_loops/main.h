@@ -25,4 +25,5 @@ int _isupper(int c);
 
 void print_to_98(int n);
 
+int add(int, int);
 #endif
