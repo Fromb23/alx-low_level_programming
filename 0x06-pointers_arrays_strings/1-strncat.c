@@ -2,10 +2,11 @@
 #include <string.h>
 
 /**
- * _strncat - Concatenates two strings with n bytes from src.
+ * _strncat - Concatenates up to n characters from the src string
+ * to the end of the dest string.
  * @dest: The destination string.
- * @src: The source string to append to dest.
- * @n: The maximum number of bytes from src to append.
+ * @src: The source string.
+ * @n: The maximum number of characters to concatenate from src.
  *
  * Return: A pointer to the resulting string dest.
  **/
@@ -13,8 +14,15 @@
 char *_strncat(char *dest, char *src, int n)
 
 {
+	int j;
+	int len = strlen(dest);
 
-	strncat(dest, src, n);
+	for (j = 0; j < n && src[j] !=  '\0'; j++)
+	{
+		dest[len + j] = src[j];
+	}
+
+	dest[len + j] = '\0';
 
 	return (dest);
 }
