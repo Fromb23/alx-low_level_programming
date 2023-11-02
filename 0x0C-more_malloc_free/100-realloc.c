@@ -20,15 +20,18 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	min_size = old_size < new_size ? old_size : new_size;
 
 	if (new_size == old_size)
+	{
 		return (ptr);
-
+	}
 	realloc_allocation = malloc(new_size);
 	if (realloc_allocation == NULL)
+	{
 		return	(NULL);
-
+	}
 	if (ptr == NULL)
+	{
 		return (realloc_allocation);
-
+	}
 	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
