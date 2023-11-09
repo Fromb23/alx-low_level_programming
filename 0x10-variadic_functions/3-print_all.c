@@ -46,7 +46,7 @@ void print_all(const char * const format, ...)
 			default:
 			break;
 		}
-		if (*(++ptr))
+		if (*(++ptr) && (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's'))
 			printf(", ");
 	}
 	printf("\n");
