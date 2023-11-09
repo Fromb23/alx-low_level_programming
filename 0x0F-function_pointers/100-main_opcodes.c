@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 {
 	int num0, i;
-	unsigned char *ptr_bytes, byte_char;
+	unsigned char *ptr_bytes;
 
 	if (argc != 2)
 	{
@@ -22,11 +22,6 @@ int main(int argc, char *argv[])
 	}
 
 	num0 = atoi(argv[1]);
-	if (num0 <= 0)
-	{
-		printf("Error\n");
-		exit(1);
-	}
 	if (num0 < 0)
 	{
 		printf("Error\n");
