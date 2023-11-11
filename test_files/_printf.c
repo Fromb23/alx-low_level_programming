@@ -11,7 +11,8 @@ int _printf(const char *format, ...)
 {
 	va_list output;
 	size_t i, num_handlers = NUM_HANDLERS;
-	int total_len;
+	int total_len = 0;
+	char buffer[BUFFER_SIZE];
 
 	va_start(output, format);
 
@@ -43,6 +44,7 @@ int _printf(const char *format, ...)
 			format++;
 		}
 	}
+	write(1, &buffer, total_len);
 
 	va_end(output);
 	return (total_len);
