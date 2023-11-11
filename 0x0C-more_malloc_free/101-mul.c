@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	{
 		if (!isdigit(s2_argv[j]))
 		{
-			printf("Eror\n");
+			printf("Error\n");
 			exit(98);
 		}
 	}
