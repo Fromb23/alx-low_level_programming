@@ -1,0 +1,202 @@
+#include "main.h"
+
+/**
+ * print_b - Mimics the behavior of the %b specifier in printf
+ * @output: A va_list containing the unsigned integer to be printed
+ *
+ * Return: The number of characters printed (excluding null byte)
+ **/
+
+int print_b(va_list output)
+
+{
+	unsigned int custom_b = va_arg(output, unsigned int);
+	char buffer[BUFFER_SIZE];
+	unsigned int temp1 = custom_b;
+	int bit_count = 0, i;
+
+	do
+	{
+		temp1 >>= 1;
+		bit_count++;
+	}
+	while (temp1 != 0);
+
+	if (bit_count >= BUFFER_SIZE)
+		return (-1);
+
+	for (i = bit_count - 1; i >= 0; i--)
+	{
+	buffer[i] = '0' + (custom_b & 1);
+	custom_b >>= 1;
+	}
+	buffer[bit_count] = '\0';
+	write(1, buffer, bit_count);
+	fflush(stdout);
+
+	return (bit_count);
+}
+
+/**
+ * print_u - Mimics the behavior of the %u specifier in printf
+ * @output: A va_list containing the unsigned integer to be printed
+ *
+ * Return: The number of characters printed (excluding null byte)
+ **/
+
+int print_u(va_list output)
+{
+	unsigned int custom_u = va_arg(output, unsigned int);
+	char buffer[BUFFER_SIZE];
+
+	unsigned int temp = custom_u;
+	int digit_count = 0, j;
+	do
+	{
+		temp /= 10;
+		digit_count++;
+	} while (temp != 0);
+
+	if (digit_count >= BUFFER_SIZE)
+		return -1;
+	
+	j = digit_count - 1;
+	do
+	{
+		buffer[j] = '0' + (custom_u % 10);
+		custom_u /= 10;
+		j--;
+	}
+	while (custom_u != 0);
+	buffer[digit_count] = '\0';
+
+	write(1, buffer, digit_count);
+	fflush(stdout);
+
+	return digit_count;
+}
+
+/**
+ * print_o - Mimics the behavior of the %o specifier in printf
+ * @output: A va_list containing the unsigned integer to be printed
+ *
+ * Return: The number of characters printed (excluding null byte)
+ **/
+
+int print_o(va_list output)
+
+{
+	unsigned int custom_o = va_arg(output, unsigned int);
+	char buffer[BUFFER_SIZE];
+
+	unsigned int temp = custom_o;
+	int octal_count = 0, k;
+	do
+	{
+		temp /= 8;
+		octal_count++;
+	} while (temp != 0);
+
+	if (octal_count >= BUFFER_SIZE)
+		return -1;
+
+	k = octal_count - 1;
+	do
+	{
+		buffer[k] = '0' + (custom_o % 8);
+		custom_o /= 8;
+		k--;
+	}
+	while (custom_o != 0);
+	buffer[octal_count] = '\0';
+
+	write(1, buffer, octal_count);
+
+	return octal_count;
+}
+
+/**
+ * print_x - Mimics the behavior of the %x specifier in printf
+ * @output: A va_list containing the unsigned integer to be printed
+ *
+ * Return: The number of characters printed (excluding null byte)
+ **/
+
+int print_x(va_list output)
+
+{
+	unsigned int custom_x = va_arg(output, unsigned int);
+	char buffer[BUFFER_SIZE];
+
+	unsigned int temp = custom_x;
+	int hex_count = 0, a;
+	do
+	{
+		temp /= 16;
+		hex_count++;
+	} while (temp != 0);
+
+	if (hex_count >= BUFFER_SIZE)
+			return -1;
+	
+	a = hex_count - 1;
+	do
+	{
+	int remainder = custom_x % 16;
+		if (remainder < 10)
+			buffer[a] = '0' + remainder;
+		else
+			buffer[a] = 'a' + (remainder - 10);
+		custom_x /= 16;
+		a--;
+	}
+	while (custom_x != 0);
+	buffer[hex_count] = '\0';
+
+	write(1, buffer, hex_count);
+
+	return hex_count;
+}
+
+/**
+ * print_X - Mimics the behavior of the %X specifier in printf
+ * @output: A va_list containing the unsigned integer to be printed
+ *
+ * Return: The number of characters printed (excluding null byte)
+ **/
+
+int print_X(va_list output)
+
+{
+	unsigned int custom_X = va_arg(output, unsigned int);
+	char buffer[BUFFER_SIZE];
+
+	unsigned int temp = custom_X;
+	int hex_count = 0, y, remainder;
+
+	do
+	{
+		temp /= 16;
+		hex_count++;
+	} while (temp != 0);
+
+	if (hex_count >= BUFFER_SIZE)
+			return -1;
+
+	y = hex_count - 1;
+	do
+	{
+		remainder = custom_X % 16;
+		if (remainder < 10)
+			buffer[y] = '0' + remainder;
+		else
+			buffer[y] = 'A' + (remainder - 10);
+		custom_X /= 16;
+		y--;
+	} while (custom_X != 0);
+	buffer[hex_count] = '\0';
+
+	write(1, buffer, hex_count);
+
+	return hex_count;
+}
