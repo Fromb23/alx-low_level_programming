@@ -20,13 +20,10 @@ int create_file(const char *filename, char *text_content)
 
 	file = fopen(filename, "w");
 	if (file == NULL)
-	{
-		perror("Error opening file");
 		return (-1);
-	}
+	
 	if (chmod(filename, S_IRUSR | S_IWUSR) == -1)
 	{
-		perror("Error setting file permissions");
 		fclose(file);
 		return (-1);
 	}
@@ -35,7 +32,6 @@ int create_file(const char *filename, char *text_content)
 	{
 		if (fputs(text_content, file) == EOF)
 		{
-			perror("Error writing to file");
 			fclose(file);
 			return (-1);
 		}
