@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
 	file = fopen(file_from, "r");
 	if (file == NULL)
 	{
-		dprintf(2, "Error: Can't read from file%s\n", file_from);
+		perror("Error: ");
+		dprintf(2,"Can't read from file%s\n", file_from);
 		exit (98);
 	}
 	
@@ -33,7 +34,8 @@ int main(int argc, char *argv[])
 	file_dest = fopen(file_to, "w");
 	if (file_dest == NULL)
 	{
-		dprintf(2, "Error: Can't write to%s\n", file_to);
+		perror("Error: ");
+		dprintf(2, "Can't write to%s\n", file_to);
 		fclose(file);
 		exit (99);
 	}
@@ -41,7 +43,8 @@ int main(int argc, char *argv[])
 	{
 		if (fwrite(buffer, 1, bytesRead, file_dest) != bytesRead)
 		{
-			dprintf(2, "Error: Could not write to file '%s'\n", file_to);
+			perror("Error: ");
+			dprintf(2, "Could not write to file '%s'\n", file_to);
 			fclose(file);
 			fclose(file_dest);
 			exit(100);
