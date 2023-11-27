@@ -18,13 +18,14 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit (97);
 	}
 	file_from = argv[1];
 	file = fopen(file_from, "r");
 	if (file == NULL)
 	{
-		dprintf(2, "Error: Can't read from file NAME_OF_THE_FILE%s\n", file_from);
+		dprintf(2, "Error: Can't read from file%s\n", file_from);
 		exit (98);
 	}
 	
@@ -32,27 +33,9 @@ int main(int argc, char *argv[])
 	file_dest = fopen(file_to, "w");
 	if (file_dest == NULL)
 	{
-		dprintf(2, "Error: Can't write to NAME_OF_THE_FILE%s\n", file_to);
+		dprintf(2, "Error: Can't write to%s\n", file_to);
+		fclose(file);
 		exit (99);
-	}
-	if (fclose(file_dest) != 0)
-	{
-		dprintf(2, "Error: Can't close fd FD_VALUE\n");
-		fclose(file_dest);
-		exit(100);
-	}
-	if (stat(file_to, &st) == 0)
-	{
-		printf("File already exists. Permissions unchanged.\n");
-	}
-	else
-	{
-		if (chmod(file_to, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH) == -1)
-		{
-			dprintf(2, "Error: Could not set permissions for '%s'\n", file_to);
-			exit(101);
-		}
-		printf("Permissions set to rw-rw-r-- for '%s'\n", file_to);
 	}
 	while ((bytesRead = fread(buffer, 1, BUFFER_SIZE, file)) > 0)
 	{
@@ -65,7 +48,23 @@ int main(int argc, char *argv[])
 		}
 	}
 	fclose(file);
-	fclose(file_dest);
-
+	if (fclose(file_dest) != 0)
+	{
+		dprintf(2, "Error: Can't close fd FD_VALUE\n");
+		exit(100);
+	}
+	if (stat(file_to, &st) == -1)
+	{
+		dprintf(2, "Error: Could not get information about %s\n", file_to);
+		exit (101);
+	}
+	else
+	{
+		if (chmod(file_to, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH) == -1)
+		{
+			dprintf(2, "Error: Could not set permissions for '%s'\n", file_to);
+			exit(102);
+		}
+	}
 	return (0);
 }
