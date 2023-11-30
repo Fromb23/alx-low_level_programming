@@ -14,24 +14,23 @@
 list_t *add_node(list_t **head, const char *str)
 
 {
-	list_t *mem_allocation;
+	list_t *new_node;
+	unsigned int len;
 
 	if (head == NULL)
 		return (NULL);
 
-	mem_allocation = (list_t *)malloc(sizeof(list_t));
-	if (mem_allocation == NULL)
+	new_node = (list_t *)malloc(sizeof(list_t));
+	if (new_node == NULL)
 		return (NULL);
 
-	mem_allocation->str = strdup(str);
-	if (mem_allocation->str == NULL)
-	{
-		free(mem_allocation);
-		return (NULL);
-	}
-	mem_allocation->len = strlen(mem_allocation->str);
-	mem_allocation->next = *head;
-	*head = mem_allocation;
+	new_node->str = strdup(str);
 
-	return (mem_allocation);
+	len = strlen(str);
+	new_node->len = len;
+
+	new_node->next = *head;
+	*head = new_node;
+
+	return (new_node);
 }
