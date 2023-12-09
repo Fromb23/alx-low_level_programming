@@ -37,7 +37,7 @@ void copy_file(const char *file_from, const char *file_to)
 
 	file = fopen(file_from, "r");
 	if (file == NULL)
-	        handle_error("Can't read from file ", file_from);
+		handle_error("Can't read from file ", file_from);
 
 	file_dest = fopen(file_to, "w");
 
@@ -59,7 +59,7 @@ void copy_file(const char *file_from, const char *file_to)
 
 	fclose(file);
 
-    	if (fclose(file_dest) != 0)
+	if (fclose(file_dest) != 0)
 	{
 		dprintf(2, "Error: Can't close fd FD_VALUE\n");
 		exit(100);
