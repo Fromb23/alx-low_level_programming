@@ -1,0 +1,5 @@
+CC = gcc
+SRC = file1.c file2.c
+
+all:
+	$(CC) $(SRC) -o school
