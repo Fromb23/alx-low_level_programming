@@ -10,22 +10,18 @@
 void more_numbers(void)
 
 {
-	int j, i;
-	int first_digit, last_digit;
+	int i, j;
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i <= 10; i++)
 	{
-		for (j = 0; j <= 9; j++)
+		for (j = 0; j <= 14; j++)
+		{
+			if (j >= 10)
 			{
-			_putchar('0' + j);
+				_putchar((j / 10) + '0');
 			}
-				for (j = 10; j <= 14; j++)
-				{
-					first_digit = j / 10;
-					last_digit = j % 10;
-				_putchar('0' + first_digit);
-				_putchar('0' + last_digit);
-				}
+			_putchar((j % 10) + '0');
+		}
 		_putchar('\n');
 	}
 }
